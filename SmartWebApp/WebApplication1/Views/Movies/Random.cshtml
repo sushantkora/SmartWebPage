@@ -1,13 +1,47 @@
-﻿@model SmartWebApp.Models.Movies
+﻿@model SmartWebApp.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    var className= (@Model.Customers.Count>2) ? "popular": null;
+}
 
-<h2>@Model.Title</h2>
-<h2>@Model.Date</h2>
-<h2>@Model.Count</h2>
-<h2>@Model.Id</h2>
+
+@if(Model.Customers.Count==0)
+{
+    <textarea>No one has rented this movie</textarea>
+}
+else
+{
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr class="table-dark">
+                <td>@customer.Name</td>
+                <td>@customer.Id</td>
+
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
+
+}
+
+
+
+
+
 
 
 

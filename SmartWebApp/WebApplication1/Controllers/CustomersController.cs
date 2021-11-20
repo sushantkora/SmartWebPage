@@ -1,19 +1,19 @@
-﻿using System;
+﻿using SmartWebApp.Models;
+using SmartWebApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SmartWebApp.Models;
-using SmartWebApp.ViewModels;
 
 namespace SmartWebApp.Controllers
 {
-    public class MoviesController : Controller
+    public class CustomersController : Controller
     {
-        // GET: Movies
-        public ActionResult Random()
+        // GET: Customers
+        [Route("customers/index")]
+        public ActionResult Customers()
         {
-
             var movies = new List<Movies>()
             {
                 new Movies() { Id = 1,Title = "Intesteller", Date=DateTime.Now,IMDB=9.2 },
@@ -32,23 +32,7 @@ namespace SmartWebApp.Controllers
                 Customers = customers,
             };
 
-
             return View(viewModels);
-        }
-
-       
-
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if(!pageIndex.HasValue)
-                    pageIndex = 1;  
-            sortBy = "name";
-            return Content(String.Format("pageIndex={0}&sortBy={1}",pageIndex,sortBy));
-        }
-        [Route("movies/releases/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year,int month)
-        {
-            return Content(year+"/"+month);
         }
     }
 }

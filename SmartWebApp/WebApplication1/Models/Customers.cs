@@ -5,12 +5,10 @@ using System.Web;
 
 namespace SmartWebApp.Models
 {
-    public class Movies
+    public class Customers
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public DateTime Date { get; set; }
-        public double IMDB { get; set; }
+        public string Name { get; set; }
 
     }
 }
