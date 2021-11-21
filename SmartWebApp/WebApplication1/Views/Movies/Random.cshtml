@@ -4,39 +4,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    var className= (@Model.Customers.Count>2) ? "popular": null;
+    var className = (@Model.Customers.Count > 2) ? "popular" : null;
 }
 
-
-@if(Model.Customers.Count==0)
+@if (Model.Customers.Count == 0)
 {
-    <textarea>No one has rented this movie</textarea>
+<textarea>No one has rented this movie</textarea>
 }
 else
 {
 <table class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">Customer Name</th>
-            <th scope="col">Customer ID</th>
+            <th scope="col">Movie Title</th>
+            <th scope="col">Movie ID</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">IMDB User Rating</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var customer in Model.Customers)
+        @foreach (var movie in Model.Movies)
         {
             <tr class="table-dark">
-                <td>@customer.Name</td>
-                <td>@customer.Id</td>
+                <td>@movie.Title</td>
+                <td>@movie.Id</td>
+                <td>@movie.Date</td>
+                <td>@movie.IMDB</td>
 
             </tr>
         }
 
 
 
+
+
+
     </tbody>
 </table>
-
 }
+
 
 
 

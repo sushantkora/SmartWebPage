@@ -11,37 +11,44 @@
 
 @if (Model.Customers.Count == 0)
 {
-    <textarea>No one has rented this movie</textarea>
+<textarea>No one has rented this movie</textarea>
 }
 else
 {
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Movie Title</th>
-                <th scope="col">Movie ID</th>
-                <th scope="col">Release Date</th>
-                <th scope="col">IMDB User Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var movie in Model.Movies)
-            {
-            <tr class="table-dark">
-                <td>@movie.Title</td>
-                <td>@movie.Id</td>
-                <td>@movie.Date</td>
-                <td>@movie.IMDB</td>
-
-            </tr>
-            }
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Movies Subscription</th>
+            <th scope="col">Subscription Type</th>
+            <th scope="col">Discount Rate</th>
 
 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+        <tr class="table-dark">
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td>@customer.IsSubscribedToNewsLetter</td>
+            <td>@customer.MembershipType.DurationInMonths Months</td>
+            <td>@customer.MembershipType.DurationRate %</td>
 
-        </tbody>
-    </table>
+
+        </tr>
+        }
+
+
+
+    </tbody>
+</table>
 
 }
+
+
 
 
 
