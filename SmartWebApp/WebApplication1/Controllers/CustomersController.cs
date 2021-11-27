@@ -42,6 +42,15 @@ namespace SmartWebApp.Controllers
             return View(viewModels);
         }
 
+        public ActionResult Details(int id)
+        {
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            return View(customer);
+        }
         /*private IEnumerable<Customers> GetCustomers()
         {
             var customers = new List<Customers>()

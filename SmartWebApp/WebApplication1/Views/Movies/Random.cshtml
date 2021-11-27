@@ -17,6 +17,7 @@ else
     <thead>
         <tr>
             <th scope="col">Movie Title</th>
+            <th scope="col">Genre</th>
             <th scope="col">Movie ID</th>
             <th scope="col">Release Date</th>
             <th scope="col">IMDB User Rating</th>
@@ -25,13 +26,14 @@ else
     <tbody>
         @foreach (var movie in Model.Movies)
         {
-            <tr class="table-dark">
-                <td>@movie.Title</td>
-                <td>@movie.Id</td>
-                <td>@movie.Date</td>
-                <td>@movie.IMDB</td>
+        <tr class="table-dark">
+            <td>@Html.ActionLink(movie.Title, "Details", "Movies", new { id = movie.Id }, null)</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Id</td>
+            <td>@movie.Date</td>
+            <td>@movie.IMDB</td>
 
-            </tr>
+        </tr>
         }
 
 

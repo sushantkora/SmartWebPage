@@ -173,6 +173,54 @@
     <Compile Include="Migrations\202111211807247_TesttingManualAdditionInMigrationfile.designer.cs">
       <DependentUpon>202111211807247_TesttingManualAdditionInMigrationfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111231824358_AddNamePropertytoMembershipType.cs" />
+    <Compile Include="Migrations\202111231824358_AddNamePropertytoMembershipType.designer.cs">
+      <DependentUpon>202111231824358_AddNamePropertytoMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111231829379_AddValuestoNameColumninMemberShipTbale.cs" />
+    <Compile Include="Migrations\202111231829379_AddValuestoNameColumninMemberShipTbale.designer.cs">
+      <DependentUpon>202111231829379_AddValuestoNameColumninMemberShipTbale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271208507_AddeltaChanges.cs" />
+    <Compile Include="Migrations\202111271208507_AddeltaChanges.designer.cs">
+      <DependentUpon>202111271208507_AddeltaChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271500448_AddingDateOfBirthpropertytoCustomer.cs" />
+    <Compile Include="Migrations\202111271500448_AddingDateOfBirthpropertytoCustomer.designer.cs">
+      <DependentUpon>202111271500448_AddingDateOfBirthpropertytoCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271513555_dateTimeCustomerPropertyNullable.cs" />
+    <Compile Include="Migrations\202111271513555_dateTimeCustomerPropertyNullable.designer.cs">
+      <DependentUpon>202111271513555_dateTimeCustomerPropertyNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271518135_addDobs.cs" />
+    <Compile Include="Migrations\202111271518135_addDobs.designer.cs">
+      <DependentUpon>202111271518135_addDobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271549214_dateTimeFix.cs" />
+    <Compile Include="Migrations\202111271549214_dateTimeFix.designer.cs">
+      <DependentUpon>202111271549214_dateTimeFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271551097_TryAddingDateTime.cs" />
+    <Compile Include="Migrations\202111271551097_TryAddingDateTime.designer.cs">
+      <DependentUpon>202111271551097_TryAddingDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271556509_dobchanges.cs" />
+    <Compile Include="Migrations\202111271556509_dobchanges.designer.cs">
+      <DependentUpon>202111271556509_dobchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271558515_adddobsfinal.cs" />
+    <Compile Include="Migrations\202111271558515_adddobsfinal.designer.cs">
+      <DependentUpon>202111271558515_adddobsfinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271609169_addingGenrePropertytoMovie.cs" />
+    <Compile Include="Migrations\202111271609169_addingGenrePropertytoMovie.designer.cs">
+      <DependentUpon>202111271609169_addingGenrePropertytoMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111271643011_updatedataInMovietABLE.cs" />
+    <Compile Include="Migrations\202111271643011_updatedataInMovietABLE.designer.cs">
+      <DependentUpon>202111271643011_updatedataInMovietABLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -225,6 +273,8 @@
     <Content Include="Views\Customers\Customers.cshtml" />
     <Content Include="Views\_NavBar.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -272,6 +322,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111211807247_TesttingManualAdditionInMigrationfile.resx">
       <DependentUpon>202111211807247_TesttingManualAdditionInMigrationfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111231824358_AddNamePropertytoMembershipType.resx">
+      <DependentUpon>202111231824358_AddNamePropertytoMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111231829379_AddValuestoNameColumninMemberShipTbale.resx">
+      <DependentUpon>202111231829379_AddValuestoNameColumninMemberShipTbale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271208507_AddeltaChanges.resx">
+      <DependentUpon>202111271208507_AddeltaChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271500448_AddingDateOfBirthpropertytoCustomer.resx">
+      <DependentUpon>202111271500448_AddingDateOfBirthpropertytoCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271513555_dateTimeCustomerPropertyNullable.resx">
+      <DependentUpon>202111271513555_dateTimeCustomerPropertyNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271518135_addDobs.resx">
+      <DependentUpon>202111271518135_addDobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271549214_dateTimeFix.resx">
+      <DependentUpon>202111271549214_dateTimeFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271551097_TryAddingDateTime.resx">
+      <DependentUpon>202111271551097_TryAddingDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271556509_dobchanges.resx">
+      <DependentUpon>202111271556509_dobchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271558515_adddobsfinal.resx">
+      <DependentUpon>202111271558515_adddobsfinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271609169_addingGenrePropertytoMovie.resx">
+      <DependentUpon>202111271609169_addingGenrePropertytoMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111271643011_updatedataInMovietABLE.resx">
+      <DependentUpon>202111271643011_updatedataInMovietABLE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

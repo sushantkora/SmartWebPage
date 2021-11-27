@@ -1,0 +1,13 @@
+﻿@model SmartWebApp.Models.Movies
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul>
+    <li>@Model.Title</li>
+    <li>@Model.Genre</li>
+    <li>IMDB Rating : @Model.IMDB</li>
+    <li>@Model.Date</li>
+</ul>
+

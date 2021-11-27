@@ -13,6 +13,8 @@ namespace SmartWebApp.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+    
+        public DateTime?  DateofBirth { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
 

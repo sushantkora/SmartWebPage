@@ -11,16 +11,20 @@ namespace SmartWebApp.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
+        private MyDBContext _dbContext;
+
+        public MoviesController()
+        { 
+            _dbContext = new MyDBContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _dbContext.Dispose();
+        }
         public ActionResult Random()
         {
 
-            var movies = new List<Movies>()
-            {
-                new Movies() { Id = 1,Title = "Intesteller", Date=DateTime.Now,IMDB=9.2 },
-                 new Movies() { Id = 1,Title = "Gladiator", Date=DateTime.Now,IMDB=9.1 },
-                   new Movies() { Id = 1,Title = "Ganges Of Wasshhpur", Date=DateTime.Now,IMDB=8.5 },
-                     new Movies() { Id = 1,Title = "Wolf of Wall Street", Date=DateTime.Now,IMDB=6.7 },
-            };
+            var movies=_dbContext.Movies.ToList();
             var customers = new List<Customers>()
             {
                 new Customers() { Id = 1,Name = "Herman" },
@@ -34,6 +38,12 @@ namespace SmartWebApp.Controllers
 
 
             return View(viewModels);
+        }
+        public ActionResult Details(int Id)
+        { 
+            var movie= _dbContext.Movies.SingleOrDefault(x => x.Id == Id);
+
+            return View(movie);
         }
 
        
