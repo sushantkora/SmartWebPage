@@ -1,0 +1,38 @@
+﻿@model SmartWebApp.ViewModels.NewCustomerViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+@using (Html.BeginForm("Save", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.customers.Name)
+        @Html.TextBoxFor(m => m.customers.Name, new { @class = "form-control" })
+    </div>
+    <div class="align-self-auto"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.customers.DateofBirth)
+        @Html.TextBoxFor(m => m.customers.DateofBirth, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.customers.MembershipTypeId)
+        @Html.DropDownListFor(m => m.customers.MembershipTypeId, new SelectList(Model.membershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.customers.IsSubscribedToNewsLetter) Subscribed to NewsLetter
+                </label>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(m=>m.customers.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+
+

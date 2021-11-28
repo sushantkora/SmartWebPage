@@ -33,7 +33,7 @@ else
         {
         <tr class="table-dark">
             <td>@customer.Id</td>
-            <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+            <td>@Html.ActionLink(customer.Name, "EditCustomer", "Customers", new { id = customer.Id }, null)</td>
             <td>@customer.IsSubscribedToNewsLetter</td>
             <td>@customer.MembershipType.DurationInMonths Months</td>
             <td>@customer.MembershipType.DurationRate %</td>

@@ -41,7 +41,49 @@ namespace SmartWebApp.Controllers
 
             return View(viewModels);
         }
+        public ActionResult New()
+        {
+            var membershipType = _context.MembershipType.ToList();
+            var newcustomerViewModel = new NewCustomerViewModel();
+            newcustomerViewModel.membershipTypes = membershipType;
 
+            return View("CustomerForm",newcustomerViewModel);
+
+        }
+        [HttpPost]
+        public ActionResult Save(Customers customers)
+        {
+            if (customers.Id == 0)
+            {
+                _context.Customers.Add(customers);
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customers.Id);
+                customerInDb.Name = customers.Name;
+                customerInDb.DateofBirth = customers.DateofBirth;
+                customerInDb.MembershipTypeId= customers.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customers.IsSubscribedToNewsLetter;
+
+
+            }
+            
+            _context.SaveChanges();
+            return RedirectToAction("Customers","Customers");
+        }
+
+        public ActionResult EditCustomer(int Id)
+        {
+            var customer= _context.Customers.SingleOrDefault(c=>c.Id==Id);
+            if (customer == null)
+                return HttpNotFound();
+            var viewModel = new NewCustomerViewModel
+            {
+                customers = customer,
+                membershipTypes = _context.MembershipType.ToList()
+            };
+            return View("CustomerForm",viewModel);
+        }
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);

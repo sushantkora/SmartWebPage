@@ -12,37 +12,40 @@
 <textarea>No one has rented this movie</textarea>
 }
 else
-{
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Movie Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Movie ID</th>
-            <th scope="col">Release Date</th>
-            <th scope="col">IMDB User Rating</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model.Movies)
-        {
-        <tr class="table-dark">
-            <td>@Html.ActionLink(movie.Title, "Details", "Movies", new { id = movie.Id }, null)</td>
-            <td>@movie.Genre</td>
-            <td>@movie.Id</td>
-            <td>@movie.Date</td>
-            <td>@movie.IMDB</td>
+{ <h2>Movies List</h2>
+  <button type="button" class="btn btn-primary"> @Html.ActionLink("Add New Movie", "AddNewMovie", "Movies", new { style = "text-decoration:none;" })</button>
+   
+    <div style="height:10px"></div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Movie Title</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Movie ID</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">IMDB User Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model.Movies)
+            {
+                <tr class="table-dark">
+                    <td>@Html.ActionLink(movie.Title, "Details", "Movies", new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre</td>
+                    <td>@movie.Id</td>
+                    <td>@movie.Date</td>
+                    <td>@movie.IMDB</td>
 
-        </tr>
-        }
+                </tr>
+            }
 
 
 
 
 
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 }
 
 

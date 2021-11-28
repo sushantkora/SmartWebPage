@@ -1,0 +1,32 @@
+﻿@model SmartWebApp.Models.Movies
+@{
+    ViewBag.Title = "NewMovieForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1">Fill New Movie Details</h1">
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+    <div class="align-self-auto"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IMDB)
+        @Html.TextBoxFor(m => m.IMDB, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+

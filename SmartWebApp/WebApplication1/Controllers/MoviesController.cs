@@ -39,6 +39,28 @@ namespace SmartWebApp.Controllers
 
             return View(viewModels);
         }
+        [HttpPost]
+        public ActionResult Save(Movies movie)
+        {
+            var movie_e= _dbContext.Movies.SingleOrDefault(c=>c.Id == movie.Id);
+            if (movie_e == null)
+            {
+                _dbContext.Movies.Add(movie);
+            }
+            else
+            { 
+                movie_e.IMDB=movie.IMDB;
+                movie_e.Title=movie.Title;
+                movie_e.Date=movie.Date;
+                movie.Genre=movie.Genre;
+            }
+            _dbContext.SaveChanges();
+            return RedirectToAction("Random","Movies");
+        }
+        public ActionResult AddNewMovie()
+        { 
+            return View("NewMovieForm");
+        }
         public ActionResult Details(int Id)
         { 
             var movie= _dbContext.Movies.SingleOrDefault(x => x.Id == Id);
